@@ -1,0 +1,1 @@
+(self.webpackChunk_idscan_idvc2=self.webpackChunk_idscan_idvc2||[]).push([[911],{6953:(a,c,e)=>{e.r(c),e.d(c,{default:()=>u});var d=e(1421),s=e(7181),n=e(6635);const u=async()=>{const a=await(0,d.Z)(),c=new s.Z(a);n.Z.setModule("module","barcode",c)}}}]);
