@@ -1,10 +1,14 @@
-import { applicationType } from '../appType.ts';
+import { ILanguage } from './langStruct.ts';
 
 export default {
   header: 'Демо аворизации по лицу',
-  button: 'Очистить хранилище',
-  stage: {
-    [applicationType.REGISTER]: 'Регистрация',
-    [applicationType.AUTH]: 'Авторизация',
+  buttons: {
+    login: 'Войти',
+    clear: 'Удалить пользователя',
+  },
+  page: {
+    'login': 'Логин',
+    'register': 'Регистрация',
+    'auth': 'Авторизация',
   }
-}
+} as ILanguage;

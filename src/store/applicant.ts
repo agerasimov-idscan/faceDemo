@@ -1,9 +1,24 @@
-const APPLICANT_ID_KEY = 'APPLICANT_ID';
+export const setApplicantId = (login: string, applicantId: string, isRegistered: boolean) => localStorage.setItem(login, JSON.stringify({
+  applicantId: applicantId.toString().trim(),
+  isRegistered,
+}));
 
-export const setApplicantId = (applicantId: string) => localStorage.setItem(APPLICANT_ID_KEY, applicantId.toString().trim());
+const parse = (login: string) => {
+  try {
+    const val = localStorage.getItem(login);
+    if (val) {
+      return JSON.parse(val);
+    }
+    return false;
+  } catch {
+    return false;
+  }
 
-export const getApplicantId = () => (localStorage.getItem(APPLICANT_ID_KEY) || '').trim();
+};
 
-export const isApplicantID = () => !!getApplicantId();
+export const getApplicantId = (login: string) => parse(login)?.applicantId || '';
+export const isApplicantRegistered = (login: string) => parse(login)?.isRegistered || '';
 
-export const clearApplicantId = () => localStorage.removeItem(APPLICANT_ID_KEY);
+export const isApplicantID = (login: string) => !!getApplicantId(login);
+
+export const clearApplicantId = (login: string) => localStorage.removeItem(login);
