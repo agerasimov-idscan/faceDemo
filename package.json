@@ -10,10 +10,11 @@
   },
   "devDependencies": {
     "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "vite": "^4.3.4"
   },
   "dependencies": {
-    "@idscan/onboarding": "^2.2.3",
+    "@idscan/onboarding": "file:idscan-onboarding-2.2.5.tgz",
+    "pretty-print-json": "^2.0.1",
     "sanitize.css": "^13.0.0",
     "vite-plugin-static-copy": "^0.14.0"
   }
