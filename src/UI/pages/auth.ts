@@ -5,7 +5,6 @@ import User from '../../store/user.ts';
 import { updateUi } from '../update.ts';
 
 export default async (lib: DVSOIDVC) => {
-  let metaData;
   try {
     updateUi('auth');
     const config = {
@@ -13,7 +12,6 @@ export default async (lib: DVSOIDVC) => {
       callbacks: {
         submit(data: unknown) {
           console.log(data);
-          metaData = data.metaData;
         },
         onValidate(data: any) {
           console.log(data)

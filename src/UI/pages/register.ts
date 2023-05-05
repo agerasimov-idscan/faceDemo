@@ -14,9 +14,21 @@ import DVSOConfig from '../../helpers/DVSOConfig.ts';
 import User from '../../store/user.ts';
 import { setApplicantId } from '../../store/applicant.ts';
 import { updateUi } from '../update.ts';
+import { isObject, isString } from '../../helpers/typeGuards.ts';
+
+interface DeviceMetadata {
+  ip: string,
+  timeZone: string,
+  userLanguage: string
+}
+
+interface IValidateResponse extends IValidationResponse {
+  deviceMetadata: DeviceMetadata,
+  browserMetadata: string,
+}
 
 export default async (lib: DVSOIDVC) => {
-  let metaData;
+  let metaData: string;
   try {
     updateUi('register');
     const config = {
@@ -24,9 +36,11 @@ export default async (lib: DVSOIDVC) => {
       callbacks: {
         submit(data: unknown) {
           console.log(data);
-          metaData = data.metaData;
+          if (isObject(data) && 'metaData' in data && isString(data.metaData)) {
+            metaData = data.metaData || '';
+          }
         },
-        onValidate({ status, applicantId, document, deviceMetadata, browserMetadata }: IValidationResponse) {
+        onValidate({ status, applicantId, document, deviceMetadata, browserMetadata }: IValidateResponse) {
           if (status === 0) {
             setApplicantId(User.login, applicantId, true);
             const div = createEl('div');
