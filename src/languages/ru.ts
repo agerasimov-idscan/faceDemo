@@ -1,7 +1,7 @@
 import { ILanguage } from './langStruct.ts';
 
 export default {
-  header: 'Демо аворизации по лицу',
+  header: 'Демо авторизации по лицу',
   buttons: {
     login: 'Войти',
     clear: 'Удалить пользователя',
