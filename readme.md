@@ -1,7 +1,7 @@
 # Установка
 
 ```terminal
-    npm install @idscan/onboarding
+npm install @idscan/onboarding
 ```
 
 # Настройка webpack
@@ -87,4 +87,30 @@ new CopyWebpackPlugin ([
     onReloaded: () => {}, // функция, вызываемая после перезагрузки компонента. Нет получаемого значения
     onMounted: () => {}, // функция, вызываемая после монтирования компонента. Нет получаемого значения
     submit: () => {}, // функция, вызываемая после завершения всех шагов. Получаемое значение - объект с шагами
+```
+
+# Кэширование
+Для кэширования запросов нейронных сетей и webassambly файлов можно использовать service worker
+
+> *service worker должен быть в корне приложения*
+
+```html
+<!-- index.html -->
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+    }
+</script>
+```
+
+```javascript
+// sw.js
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => response || fetch(event.request))
+  );
+});
 ```
