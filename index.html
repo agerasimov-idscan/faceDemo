@@ -36,6 +36,17 @@
       </div>
 
     </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('sw registered')
+          console.log(registration)
+        }, err => {
+          console.log('sw register failed')
+          console.log(err)
+        });
+      }
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
