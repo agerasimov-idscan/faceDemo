@@ -23,8 +23,10 @@ interface DeviceMetadata {
 }
 
 interface IValidateResponse extends IValidationResponse {
-  deviceMetadata: DeviceMetadata,
-  browserMetadata: string,
+  model: {
+    deviceMetadata: DeviceMetadata,
+    browserMetadata: string,
+  }
 }
 
 export default async (lib: DVSOIDVC) => {
@@ -40,7 +42,7 @@ export default async (lib: DVSOIDVC) => {
             metaData = data.metaData || '';
           }
         },
-        onValidate({ status, applicantId, document, deviceMetadata, browserMetadata }: IValidateResponse) {
+        onValidate({ status, applicantId, document, model: { deviceMetadata, browserMetadata } }: IValidateResponse) {
           if (status === 0) {
             setApplicantId(User.login, applicantId, true);
             const div = createEl('div');
