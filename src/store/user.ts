@@ -1,7 +1,10 @@
 import { clearApplicantId, getApplicantId, isApplicantID, isApplicantRegistered, setApplicantId } from './applicant.ts';
 import { createApplicant } from '../API';
+import languages from '../languages';
+import { Languages } from '../languages/langStruct';
 
 const loginField = document.getElementById('login') as HTMLInputElement;
+loginField.placeholder = languages[import.meta.env.VITE_DEMO_LANGUAGE as Languages].page.login;
 
 const User = {
   login: '',

@@ -20,8 +20,8 @@ export const update = () => {
 };
 
 export default () => {
-  clear();
+  clear(import.meta.env.VITE_DEMO_LANGUAGE);
   updateClear(false);
-  login();
+  login(import.meta.env.VITE_DEMO_LANGUAGE);
   updateLogin(true);
 }

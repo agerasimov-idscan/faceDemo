@@ -3,6 +3,6 @@ import { update } from './buttons/';
 import { PageName } from '../pages';
 
 export const updateUi = (page: PageName) => {
-  updateHeader(page);
+  updateHeader(page, import.meta.env.VITE_DEMO_LANGUAGE);
   update();
 };

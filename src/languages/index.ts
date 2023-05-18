@@ -1,6 +1,8 @@
 import ru from './ru';
-import { ILanguage } from './langStruct.ts';
+import en from './en';
+import { ILanguage, Languages } from './langStruct.ts';
 
 export default {
   ru,
-} as Record<string, ILanguage>;
+  en
+} as Record<Languages, ILanguage>;

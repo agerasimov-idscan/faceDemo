@@ -5,3 +5,5 @@ export interface ILanguage {
   buttons: Record<'login' | 'clear', string>,
   page: Record<PageName, string>,
 }
+
+export type Languages = 'ru' | 'en';
