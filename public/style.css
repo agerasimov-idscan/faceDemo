@@ -34,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
+  min-width: 420px;
 }
 
 header {

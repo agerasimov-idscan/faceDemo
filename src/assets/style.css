@@ -48,6 +48,7 @@ h5 {
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
+  min-width: 420px;
 }
 
 .buttons {
