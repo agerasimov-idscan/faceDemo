@@ -19,11 +19,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(
-          to bottom right,
-          hsl(47.18deg 100% 70.69%),
-          hsl(220.74deg 71.4% 72.47%)
-  );
+  background: #fff;
   color: #333;
 }
 
