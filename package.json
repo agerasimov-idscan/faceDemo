@@ -13,7 +13,7 @@
     "vite": "^4.3.4"
   },
   "dependencies": {
-    "@idscan/onboarding": "file:idscan-onboarding-2.2.5.tgz",
+    "@idscan/onboarding": "file:idscan-onboarding-2.2.8.tgz",
     "pretty-print-json": "^2.0.1",
     "vite-plugin-static-copy": "^0.14.0"
   }

@@ -72,6 +72,7 @@ export default async (lib: DVSOIDVC) => {
       lib.updateConfig(JSON.stringify(config));
       lib.restart();
     } else {
+      // @ts-ignore
       lib = new DVSOIDVC(config);
     }
   } catch (e) {
