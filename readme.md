@@ -40,6 +40,7 @@ new CopyWebpackPlugin ([
     const DVSORegisterConfig = {
     applicantId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // идентификатор аппликанта создается на сервере с использованием секретного ключа
     isAuth: false, // при регистрации это поле можно пропустить
+    faceOnly: false, // опция, включающая регистрацию только по лицу (если установлена как true)    
     domainId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // токен домена для интеграции. По идентификатору домена будут получены настройки библиотеки
     publicKey: 'pk_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // публичный ключ
     domainApi: 'https://dev.api-dvsonline.idscan.net', // адрес API куда будет обращаться библиотека
@@ -63,6 +64,7 @@ new CopyWebpackPlugin ([
     const DVSORegisterConfig = {
     applicantId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // идентификатор аппликанта создается на сервере с использованием секретного ключа
     isAuth: true, // Необходимо для авторизации
+    faceOnly: true,  // при авторизации это поле ни на что не влияет, т.к. авторизация только по лицу
     domainId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // токен домена для интеграции. По идентификатору домена будут получены настройки библиотеки
     publicKey: 'pk_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // публичный ключ
     domainApi: 'https://dev.api-dvsonline.idscan.net', // адрес API куда будет обращаться библиотека
